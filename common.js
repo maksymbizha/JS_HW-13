@@ -1,10 +1,12 @@
+/* Перша частина */
+
 const a = prompt('Enter first text');
 const b = prompt('Enter second text');
 const c = prompt('Enter last text');
 
 
 
-if(a,b,c === null || a,b,c === "" ){
+if(a !== null && a.trim() !== "" && b !== null && b.trim() !== "" && c !== null && c.trim() !== ""){
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
@@ -35,4 +37,25 @@ if(a,b,c === null || a,b,c === "" ){
     alert('Entered invalid code');
 }
 
+/* Друга частина */
 
+Number.prototype.toDivide = function() {
+    let int = String(Math.trunc(this));
+    if(int.length <= 3) return int;
+    let space = 0;
+    let number = '';
+
+    for(let i = int.length - 1; i >= 0; i--) {
+        if(space === 3) {
+            number = ' ' + number;
+            space = 0;
+        }
+        number = int.charAt(i) + number;
+        space++;
+    }
+
+    return number;
+}
+
+const res = +prompt();
+alert(res.toDivide());
