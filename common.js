@@ -6,7 +6,7 @@ const c = prompt('Enter last text');
 
 
 
-if(a !== null && a.trim() !== "" && b !== null && b.trim() !== "" && c !== null && c.trim() !== ""){
+if(a.trim() !== ""  && b.trim() !== ""  &&  c.trim() !== "" ){
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
@@ -39,23 +39,9 @@ if(a !== null && a.trim() !== "" && b !== null && b.trim() !== "" && c !== null 
 
 /* Друга частина */
 
-Number.prototype.toDivide = function() {
-    let int = String(Math.trunc(this));
-    if(int.length <= 3) return int;
-    let space = 0;
-    let number = '';
 
-    for(let i = int.length - 1; i >= 0; i--) {
-        if(space === 3) {
-            number = ' ' + number;
-            space = 0;
-        }
-        number = int.charAt(i) + number;
-        space++;
-    }
+const num = 851723;
 
-    return number;
-}
+let array = Array.from(num.toString(), Number)
 
-const res = +prompt();
-alert(res.toDivide());
+alert(`${array.join('  ,')}`)
