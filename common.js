@@ -5,8 +5,7 @@ const b = prompt('Enter second text');
 const c = prompt('Enter last text');
 
 
-
-if(a.trim() !== ""  && b.trim() !== ""  &&  c.trim() !== "" ){
+if(a && b && c){
 
     function getRandomInt(max) {
         return Math.floor(Math.random() * max);
@@ -14,22 +13,22 @@ if(a.trim() !== ""  && b.trim() !== ""  &&  c.trim() !== "" ){
 
     switch (getRandomInt(6)){
         case 1:
-            alert(a + b + c);
+            alert(a.trim() + b.trim() + c.trim());
             break;
         case 2:
-            alert(a + c + b);
+            alert(a.trim() + c.trim() + b.trim());
             break;
         case 3:
-            alert(b+ a + c);
+            alert(b.trim() + c.trim() + a.trim());
             break;
         case 4:
-            alert(b+ c + a);
+            alert(b.trim() + a.trim() + c.trim());
             break;
         case 5:
-            alert(c + a + b);
+            alert(c.trim() + b.trim() + a.trim());
             break;
         case 6:
-            alert(c + b + a);
+            alert(c.trim() + a.trim() + b.trim());
             break;
     }
 } else {
@@ -42,6 +41,6 @@ if(a.trim() !== ""  && b.trim() !== ""  &&  c.trim() !== "" ){
 
 const num = 851723;
 
-let array = Array.from(num.toString(), Number)
+const array = Array.from(num.toString(), Number)
 
 alert(`${array.join('  ,')}`)
