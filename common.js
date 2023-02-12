@@ -32,7 +32,6 @@ if(a && b && c){
             break;
     }
 } else {
-    console.log(a,b,c);
     alert('Entered invalid code');
 }
 
